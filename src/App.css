@@ -1,0 +1,257 @@
+:root {
+  --bg: #f5efe4;
+  --surface: #fffaf2;
+  --surface-strong: #f4e4cf;
+  --text: #2f2722;
+  --muted: #86766b;
+  --accent: #d56b36;
+  --accent-2: #9f4a25;
+  --border: #e8dccb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 80px 360px 1fr;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 80% 10%, #ffe6c2 0, transparent 28%),
+    radial-gradient(circle at 10% 90%, #f8d2b4 0, transparent 35%),
+    var(--bg);
+  font-family: 'Avenir Next', 'Segoe UI', sans-serif;
+}
+
+.sidebar {
+  border-right: 1px solid var(--border);
+}
+
+.rail {
+  background: #f0dfc8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.rail-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  font-weight: 700;
+}
+
+.rail-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #d7b998;
+}
+
+.history {
+  background: rgba(255, 250, 242, 0.9);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.brand-row,
+.section-head,
+.upgrade-card,
+.chat-header,
+.composer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-row h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+button {
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.ghost-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--surface-strong);
+  color: var(--text);
+}
+
+.menu-group button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: var(--text);
+  padding: 10px 8px;
+  border-radius: 10px;
+}
+
+.menu-group button:hover,
+ul li:hover {
+  background: #f1e2d0;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.section-head span {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+ul {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+ul li {
+  padding: 10px 8px;
+  border-radius: 10px;
+  color: #5b4f47;
+  font-size: 0.92rem;
+}
+
+.upgrade-card {
+  margin-top: auto;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(140deg, #f8d6b8, #f1c9a5);
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #442114, #d16a34);
+}
+
+.avatar.small {
+  width: 36px;
+  height: 36px;
+}
+
+.upgrade-card .title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.upgrade-card .subtitle {
+  margin: 0;
+  color: #6c594d;
+  font-size: 0.85rem;
+}
+
+.chat-area {
+  padding: 22px 24px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 18px;
+}
+
+.pill {
+  background: var(--surface-strong);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 600;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 900px;
+}
+
+.bubble {
+  max-width: 78%;
+  padding: 16px;
+  border-radius: 18px;
+  line-height: 1.45;
+}
+
+.bubble.user {
+  margin-left: auto;
+  background: #ffd2a9;
+}
+
+.bubble.assistant {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.composer {
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  padding: 10px;
+}
+
+.composer input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  background: transparent;
+}
+
+.composer-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.send-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+}
+
+@media (max-width: 1100px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .rail,
+  .history {
+    display: none;
+  }
+
+  .chat-area {
+    padding: 16px;
+  }
+
+  .bubble {
+    max-width: 95%;
+  }
+}
